@@ -1,13 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  imports = [
+    ./programs
+  ];
   home.username = "suela";
   home.homeDirectory = "/home/suela";
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     zsh
     alacritty
     git
@@ -19,6 +20,9 @@
     lazygit
     python312
     ripgrep
+    keybase
+    keybase-gui
+    appimage-run
 
     # work
     kubectl
@@ -26,7 +30,10 @@
     helmfile
     kustomize
     google-cloud-sdk
-  ];
+    docker
+    docker-compose
+    sops
+  ]);
 
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -41,17 +48,6 @@
     # '';
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/suela/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -66,12 +62,20 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" ];
       theme = "robbyrussell";
     };
   };
 
-  # Let Home Manager install and manage itself.
+  programs.git = {
+    enable = true;
+    userEmail = "gscsuela@gmail.com";
+    userName = "gabriel-suela";
+    #signing.key = "C89FF184D4033338";
+    #signing.signByDefault = true;
+  };
+
+
   programs.home-manager.enable = true;
 
 }
