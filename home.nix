@@ -27,11 +27,15 @@
     keybase-gui
     appimage-run
     jq
+    yq-go
+    k9s
+    go
     tmux
     python311Packages.pip
 
     # work
     kubectl
+    krew
     micromamba
     go-task
     kubernetes-helm
