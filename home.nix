@@ -51,7 +51,7 @@
     enable = true;
     userEmail = "gscsuela@gmail.com";
     userName = "gabriel-suela";
-    signing.key = "C89FF184D4033338";
+    signing.key = "D4033338";
     signing.signByDefault = true;
   };
 
