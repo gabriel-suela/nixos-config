@@ -13,6 +13,19 @@
     git
     xclip
     gh
+    gcc
+    nodejs
+    cargo
+    lazygit
+    python312
+    ripgrep
+
+    # work
+    kubectl
+    kubernetes-helm
+    helmfile
+    kustomize
+    google-cloud-sdk
   ];
 
   home.file = {
@@ -45,13 +58,19 @@
 
   programs.zsh = {
     enable = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
       ".." = "cd ..";
     };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
   };
 
-  programs.bash.enable = true;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
