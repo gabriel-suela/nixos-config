@@ -35,6 +35,8 @@
     appimage-run
     jq
     yq-go
+    gnome.gnome-tweaks
+    fluent-gtk-theme
     k9s
     go
     tmux
