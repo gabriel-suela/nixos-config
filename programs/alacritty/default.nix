@@ -10,7 +10,7 @@
           family = "JetBrains Mono Nerd Font";
           style = "Medium";
         };
-        size = 12;
+        size = 10;
       };
     };
   };

@@ -35,12 +35,19 @@
     appimage-run
     jq
     yq-go
-    gnome.gnome-tweaks
     fluent-gtk-theme
     k9s
     go
     tmux
     python311Packages.pip
+
+    # gnome
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.compact-top-bar
+    gnomeExtensions.tray-icons-reloaded
+    gnome.gnome-tweaks
+    gnomeExtensions.just-perfection
+    gnomeExtensions.vitals
 
     # work
     kubectl
