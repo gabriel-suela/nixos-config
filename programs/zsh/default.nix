@@ -18,7 +18,6 @@
 
   home.file.".zshrc".text = ''
     ZSH_THEME="refined"
-    REFINED_CHAR_SYMBOL="⚡"
   '';
 }
 

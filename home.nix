@@ -21,16 +21,19 @@
     nodejs
     cargo
     lazygit
-    python312
+    python311
     ripgrep
     keybase
     keybase-gui
     appimage-run
     jq
     tmux
+    python311Packages.pip
 
     # work
     kubectl
+    micromamba
+    go-task
     kubernetes-helm
     helmfile
     kustomize
@@ -48,8 +51,8 @@
     enable = true;
     userEmail = "gscsuela@gmail.com";
     userName = "gabriel-suela";
-    #signing.key = "C89FF184D4033338";
-    #signing.signByDefault = true;
+    signing.key = "C89FF184D4033338";
+    signing.signByDefault = true;
   };
 
 

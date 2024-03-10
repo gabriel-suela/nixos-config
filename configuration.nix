@@ -68,7 +68,14 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Enbable keybase services
   services.keybase.enable = true;
+  services.kbfsfuse.enable = true;
+  services.kbfs.enable = true;
+
+  # Enable docker services
+  virtualisation.docker.enable = true;
 
   programs.gnupg.agent.enable = true;
 
@@ -89,11 +96,11 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
-      #  thunderbird
       neofetch
     ];
   };
 
+  # Garbage collector
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -107,15 +114,15 @@
     ];
   };
   nixpkgs.config.allowUnfree = true;
-  virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
+    google-chrome
     wget
     git
   ];
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
