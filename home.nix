@@ -11,11 +11,18 @@
     stateVersion = "23.11";
   };
 
+  nix = {
+    package = pkgs.nix;
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
+
   home.packages = (with pkgs; [
     zsh
     alacritty
     git
     xclip
+    gnumake
+    unzip
     gh
     gcc
     nodejs
