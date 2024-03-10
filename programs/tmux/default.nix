@@ -8,10 +8,27 @@
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
+      set -g pane-active-border-style 'fg=#F0C674,bg=default'
+      set -g pane-border-style 'fg=brightblack,bg=default'
+      set -g status-style 'fg=colour9'
+      set -g status-position top
+      set -g status-left ""
+      set -g status-justify left
+
+
       bind -n M-h previous-window
       bind -n M-l next-window
+
       bind | split-window -h
       bind _ split-window -v
+
+      bind '_' split-window -v -c "#{pane_current_path}"
+      bind | split-window -h -c "#{pane_current_path}"
+
+      bind -n M-k resize-pane -U 5
+      bind -n M-j resize-pane -D 5
+      bind -n M-h resize-pane -L 5
+      bind -n M-l resize-pane -R 5
 
 
       setw -g window-status-current-style 'fg=colour9 bg=#1F1F1F bold'
