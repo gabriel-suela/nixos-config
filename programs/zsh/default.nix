@@ -18,6 +18,7 @@
 
   home.file.".zshrc".text = ''
     ZSH_THEME="refined"
+    export PATH="$HOME/.krew/bin:$PATH"
   '';
 }
 

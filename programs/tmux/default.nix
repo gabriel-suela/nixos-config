@@ -14,6 +14,15 @@
       set -g status-position top
       set -g status-left ""
       set -g status-justify left
+      set-option -g focus-events on
+      set -sg terminal-overrides ",*:RGB"
+
+      set -g set-clipboard on          # use system clipboard
+      set -g escape-time 0             # zero-out escape time delay
+      set -g history-limit 1000000     # increase history size (from 2,000)
+      set-window-option -g mode-keys vi
+      set-option -g renumber-windows on
+      set -g mouse on
 
 
       bind -n M-h previous-window
