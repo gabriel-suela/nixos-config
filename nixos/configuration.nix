@@ -119,10 +119,8 @@
 
   environment.systemPackages = with pkgs; [
     neovim
-    google-chrome
     wget
     git
-    vscode
   ];
   system.stateVersion = "23.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

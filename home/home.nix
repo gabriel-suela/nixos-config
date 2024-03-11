@@ -1,14 +1,22 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
-    ./programs
+    ./programs/alacritty.nix
+    ./programs/alacritty.nix
+    ./programs/tmux.nix
   ];
 
   home = {
     username = "suela";
     homeDirectory = "/home/suela";
     stateVersion = "23.11";
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
   };
 
   nix = {
@@ -41,6 +49,8 @@
     go
     tmux
     python311Packages.pip
+    google-chrome
+    vscode
 
     # gnome
     gnomeExtensions.blur-my-shell
