@@ -54,10 +54,11 @@
     krew
     micromamba
     go-task
+    (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+
     kubernetes-helm
     helmfile
     kustomize
-    google-cloud-sdk
     docker
     docker-compose
     sops
