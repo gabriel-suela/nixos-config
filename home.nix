@@ -36,6 +36,7 @@
     jq
     yq-go
     fluent-gtk-theme
+    gruvbox-gtk-theme
     k9s
     go
     tmux
@@ -51,6 +52,7 @@
 
     # work
     kubectl
+    kind
     krew
     micromamba
     go-task
@@ -66,6 +68,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    GTK_THEME = "Gruvbox-Dark-B-LB";
   };
 
   programs.git = {
