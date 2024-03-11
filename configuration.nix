@@ -112,6 +112,7 @@
     NIXPKGS_ALLOW_UNFREE = "1";
     PATH = [
       "\${HOME}/.local/bin"
+      "\${HOME}/.krew/bin"
     ];
   };
   nixpkgs.config.allowUnfree = true;
@@ -121,6 +122,7 @@
     google-chrome
     wget
     git
+    vscode
   ];
   system.stateVersion = "23.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
