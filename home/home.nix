@@ -51,6 +51,28 @@
     python311Packages.pip
     google-chrome
     vscode
+    stremio
+
+
+    #wm-stuff
+    rofi
+    feh
+    bspwm
+    sxhkd
+
+    # Screenshot and recording tools
+    flameshot
+    simplescreenrecorder
+
+    # File and system utilities
+    inotify-tools # inotifywait, inotifywatch - For file system events
+    i3lock-fancy-rapid
+    libnotify
+    playerctl # Control media players from command line
+    xdg-utils
+
+    # Other utilities
+    yad
 
     # gnome
     gnomeExtensions.blur-my-shell
@@ -67,7 +89,6 @@
     micromamba
     go-task
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
-
     kubernetes-helm
     helmfile
     kustomize
@@ -78,7 +99,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GTK_THEME = "Gruvbox-Dark-B-LB";
   };
 
   programs.git = {
