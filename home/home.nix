@@ -6,6 +6,7 @@
     ./programs/zsh.nix
     ./programs/tmux.nix
     ./programs/picom.nix
+    ./programs/rofi.nix
   ];
 
   home = {
@@ -56,13 +57,13 @@
     tmux-sessionizer
 
     #wm-stuff
-    rofi
     feh
     dunst
     picom
     i3
     dmenu
     i3status
+    polybar
 
     # Screenshot and recording tools
     flameshot
@@ -104,6 +105,17 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  nixpkgs.config = {
+    packageOverrides = pkgs: rec {
+      polybar = pkgs.polybar.override {
+        i3Support = true;
+        alsaSupport = true;
+        pulseSupport = true;
+      };
+    };
+  };
+
 
   programs.git = {
     enable = true;

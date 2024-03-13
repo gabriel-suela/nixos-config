@@ -3,12 +3,12 @@
 {
   services.picom = {
     enable = true;
-
     activeOpacity = 1;
     inactiveOpacity = 1;
-    fade = true;
-    backend = "glx";
+    fade = false;
+    backend = "xrender";
     vSync = true;
+    shadow = false;
 
   };
 }

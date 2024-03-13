@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
-{
 
+{
   services.xserver = {
     videoDrivers = [ "nvidia" ];
     enable = true;
     layout = "us";
-    xkbVariant = "altgr-intl";
+    xkbVariant = "intl";
     displayManager.gdm = {
       enable = true;
     };
@@ -19,6 +19,10 @@
         i3status
         i3lock
         i3blocks
+        lxappearance
+        pavucontrol
+        xfce.thunar
+        lf
       ];
     };
   };
