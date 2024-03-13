@@ -5,6 +5,7 @@
     ./programs/alacritty.nix
     ./programs/zsh.nix
     ./programs/tmux.nix
+    ./programs/picom.nix
   ];
 
   home = {
@@ -52,13 +53,16 @@
     google-chrome
     vscode
     stremio
-
+    tmux-sessionizer
 
     #wm-stuff
     rofi
     feh
-    bspwm
-    sxhkd
+    dunst
+    picom
+    i3
+    dmenu
+    i3status
 
     # Screenshot and recording tools
     flameshot

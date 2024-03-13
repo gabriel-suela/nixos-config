@@ -16,7 +16,6 @@
       };
 
       window = {
-        decorations = "none";
         dynamic_title = false;
         dynamic_padding = true;
       };
@@ -28,7 +27,7 @@
       };
 
       font = {
-        size = 12;
+        size = 10;
         normal = {
           family = "JetBrains Mono Nerd Font";
           style = "Regular";
