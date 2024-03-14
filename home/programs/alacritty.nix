@@ -5,11 +5,6 @@
     enable = true;
     settings = {
       shell.program = "zsh";
-      shell.args = [
-        "-l"
-        "-c"
-        "tmux attach || tmux "
-      ];
 
       env = {
         TERM = "xterm-256color";
@@ -27,7 +22,7 @@
       };
 
       font = {
-        size = 10;
+        size = 11.5;
         normal = {
           family = "JetBrains Mono Nerd Font";
           style = "Regular";
