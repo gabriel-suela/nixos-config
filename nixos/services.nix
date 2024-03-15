@@ -2,15 +2,13 @@
 
 {
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
     enable = true;
-    layout = "us";
-    xkbVariant = "intl";
-    displayManager.gdm = {
+    videoDrivers = [ "nvidia" ];
+    displayManager.sddm = {
       enable = true;
     };
     desktopManager.gnome = {
-      enable = true;
+      enable = false;
     };
     windowManager.i3 = {
       enable = true;
@@ -35,6 +33,7 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
+    wireplumber.enable = true;
     pulse.enable = true;
   };
 }
