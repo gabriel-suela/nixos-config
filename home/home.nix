@@ -7,6 +7,8 @@
     ./programs/tmux.nix
     ./programs/picom.nix
     ./programs/rofi.nix
+    ./programs/fuzzel.nix
+    ./programs/appearance.nix
   ];
 
   home = {
@@ -41,7 +43,6 @@
     python311
     ripgrep
     keybase
-    keybase-gui
     appimage-run
     jq
     yq-go
@@ -64,28 +65,19 @@
     dmenu
     i3status
     polybar
+    waybar
+    fuzzel
+    nwg-look
+    hyprpaper
 
     # Screenshot and recording tools
     flameshot
     simplescreenrecorder
 
     # File and system utilities
-    inotify-tools # inotifywait, inotifywatch - For file system events
-    i3lock-fancy-rapid
     libnotify
-    playerctl # Control media players from command line
     xdg-utils
-
-    # Other utilities
     yad
-
-    # gnome
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.compact-top-bar
-    gnomeExtensions.tray-icons-reloaded
-    gnome.gnome-tweaks
-    gnomeExtensions.just-perfection
-    gnomeExtensions.vitals
 
     # work
     kubectl
@@ -104,6 +96,18 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
+    __GL_VRR_ALLOWED = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    CLUTTER_BACKEND = "wayland";
+    WLR_RENDERER = "vulkan";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    NIXOS_OZONE_WL = "1";
   };
 
   nixpkgs.config = {
@@ -124,7 +128,6 @@
     signing.key = "D4033338";
     signing.signByDefault = true;
   };
-
 
   programs.home-manager.enable = true;
 
