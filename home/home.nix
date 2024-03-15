@@ -9,6 +9,7 @@
     ./programs/rofi.nix
     ./programs/fuzzel.nix
     ./programs/appearance.nix
+    ./programs/dunst.nix
   ];
 
   home = {
@@ -69,6 +70,10 @@
     fuzzel
     nwg-look
     hyprpaper
+    grim
+    slurp
+    wl-clipboard
+    hyprshot
 
     # Screenshot and recording tools
     flameshot
