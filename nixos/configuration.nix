@@ -35,12 +35,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   time.timeZone = "America/Sao_Paulo";
@@ -81,24 +76,6 @@
     ];
   };
 
-
-  services.dbus.enable = true;
-
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-  xdg.portal = {
-    enable = true;
-    wlr = {
-      enable = true;
-      settings = {
-        screencast = {
-          chooser_type = "simple";
-          chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -ro";
-        };
-      };
-    };
-  };
-
   # Garbage collector
   nix.gc = {
     automatic = true;
@@ -119,9 +96,6 @@
     neovim
     wget
     git
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
   ];
   system.stateVersion = "23.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

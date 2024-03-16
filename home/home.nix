@@ -7,9 +7,6 @@
     ./programs/tmux.nix
     ./programs/picom.nix
     ./programs/rofi.nix
-    ./programs/fuzzel.nix
-    ./programs/appearance.nix
-    ./programs/dunst.nix
   ];
 
   home = {
@@ -30,9 +27,7 @@
   };
 
   home.packages = (with pkgs; [
-    zsh
     alacritty
-    git
     xclip
     gnumake
     unzip
@@ -56,24 +51,7 @@
     google-chrome
     vscode
     stremio
-    tmux-sessionizer
 
-    #wm-stuff
-    feh
-    dunst
-    picom
-    i3
-    dmenu
-    i3status
-    polybar
-    waybar
-    fuzzel
-    nwg-look
-    hyprpaper
-    grim
-    slurp
-    wl-clipboard
-    hyprshot
 
     # Screenshot and recording tools
     flameshot
@@ -101,17 +79,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
-    __GL_VRR_ALLOWED = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE = "1";
-    CLUTTER_BACKEND = "wayland";
-    WLR_RENDERER = "vulkan";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
     NIXOS_OZONE_WL = "1";
   };
 
@@ -124,7 +91,6 @@
       };
     };
   };
-
 
   programs.git = {
     enable = true;

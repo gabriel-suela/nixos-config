@@ -4,16 +4,20 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    displayManager.sddm = {
+    displayManager.gdm = {
       enable = true;
     };
     desktopManager.gnome = {
-      enable = false;
+      enable = true;
     };
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
         dmenu
+        feh
+        dunst
+        picom
+        polybar
         i3status
         i3lock
         i3blocks
@@ -24,6 +28,25 @@
       ];
     };
   };
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
 
   services.flatpak.enable = true;
 
