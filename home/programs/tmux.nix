@@ -6,8 +6,13 @@
     prefix = "C-a";
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.resurrect
+      tmuxPlugins.continuum
     ];
     extraConfig = ''
+      resurrect_dir="$HOME/.tmux/resurrect"
+      set -g @resurrect-dir $resurrect_dir
+      set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
       set -g pane-active-border-style 'fg=#F0C674,bg=default'
       set -g pane-border-style 'fg=brightblack,bg=default'
       set -g status-style 'fg=colour9'
@@ -24,6 +29,9 @@
       set-option -g renumber-windows on
       set -g mouse on
 
+      bind S choose-tree
+      bind N command-prompt -p "New Session:" "new-session -A -s '%%'"
+      bind K confirm kill-sessio
 
       bind -n M-h previous-window
       bind -n M-l next-window

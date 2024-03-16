@@ -5,6 +5,8 @@
     ./programs/alacritty.nix
     ./programs/zsh.nix
     ./programs/tmux.nix
+    ./programs/dunst.nix
+    ./programs/picom.nix
   ];
 
   home = {
@@ -40,6 +42,7 @@
     ripgrep
     keybase
     keybase-gui
+    stremio
     appimage-run
     jq
     yq-go
@@ -51,14 +54,7 @@
     python311Packages.pip
     google-chrome
     vscode
-
-    # gnome
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.compact-top-bar
-    gnomeExtensions.tray-icons-reloaded
-    gnome.gnome-tweaks
-    gnomeExtensions.just-perfection
-    gnomeExtensions.vitals
+    libnotify
 
     # work
     kubectl
@@ -78,7 +74,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GTK_THEME = "Gruvbox-Dark-B-LB";
+    #GTK_THEME = "Gruvbox-Dark-B-LB";
   };
 
   programs.git = {
@@ -88,7 +84,6 @@
     signing.key = "D4033338";
     signing.signByDefault = true;
   };
-
 
   programs.home-manager.enable = true;
 

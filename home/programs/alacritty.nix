@@ -16,7 +16,6 @@
       };
 
       window = {
-        decorations = "none";
         dynamic_title = false;
         dynamic_padding = true;
       };
