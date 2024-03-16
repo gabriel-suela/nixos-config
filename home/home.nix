@@ -3,7 +3,7 @@
 {
   imports = [
     ./programs/alacritty.nix
-    ./programs/zsh.nix
+    ./programs/alacritty.nix
     ./programs/tmux.nix
     ./programs/picom.nix
     ./programs/rofi.nix
