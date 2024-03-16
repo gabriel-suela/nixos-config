@@ -3,7 +3,7 @@
 {
   imports = [
     ./programs/alacritty.nix
-    ./programs/alacritty.nix
+    ./programs/zsh.nix
     ./programs/tmux.nix
   ];
 
@@ -25,7 +25,6 @@
   };
 
   home.packages = (with pkgs; [
-    zsh
     alacritty
     git
     xclip
