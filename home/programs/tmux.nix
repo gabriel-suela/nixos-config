@@ -6,6 +6,7 @@
     prefix = "C-a";
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.catppuccin
     ];
     extraConfig = ''
       set -g pane-active-border-style 'fg=#F0C674,bg=default'
@@ -17,16 +18,12 @@
       set-option -g focus-events on
       set -sg terminal-overrides ",*:RGB"
 
-      set -g set-clipboard on          # use system clipboard
-      set -g escape-time 0             # zero-out escape time delay
-      set -g history-limit 1000000     # increase history size (from 2,000)
+      set -g set-clipboard on
+      set -g escape-time 0
+      set -g history-limit 1000000
       set-window-option -g mode-keys vi
       set-option -g renumber-windows on
       set -g mouse on
-
-
-      bind -n M-h previous-window
-      bind -n M-l next-window
 
       bind | split-window -h
       bind _ split-window -v
@@ -58,7 +55,6 @@
       "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
       "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
-
 
     '';
   };

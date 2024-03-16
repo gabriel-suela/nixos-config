@@ -48,6 +48,8 @@
     atomix # puzzle game
   ]);
 
+  programs.dconf.enable = true;
+
   services.flatpak.enable = true;
 
   services.printing.enable = true;

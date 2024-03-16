@@ -51,6 +51,9 @@
     google-chrome
     vscode
     stremio
+    materia-theme
+    fzf
+    zoxide
 
 
     # Screenshot and recording tools

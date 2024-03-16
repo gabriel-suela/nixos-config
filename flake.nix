@@ -22,7 +22,7 @@
       homeConfigurations = {
         suela = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./nixos/home.nix ];
+          modules = [ ./home/home.nix ];
         };
       };
     };
