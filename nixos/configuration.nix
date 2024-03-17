@@ -37,6 +37,13 @@
   environment.pathsToLink = [ "/libexec" ];
   programs.zsh.enable = true;
 
+  programs.steam =
+    {
+      enable = true;
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
+
   # Enable docker services
   virtualisation.docker.enable = true;
 

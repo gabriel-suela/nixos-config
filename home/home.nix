@@ -54,7 +54,10 @@
     python311Packages.pip
     google-chrome
     vscode
+    flameshot
     libnotify
+    xfce.thunar
+    fluent-icon-theme
 
     # work
     kubectl
