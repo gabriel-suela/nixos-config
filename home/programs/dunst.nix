@@ -17,7 +17,7 @@
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 120;
-        font = "Hack Nerd Font 11";
+        font = "Hack Nerd Font 10";
         line_height = 0;
         markup = "full";
         format = "<b>%s</b>\n%b";

@@ -58,6 +58,7 @@
     libnotify
     xfce.thunar
     fluent-icon-theme
+    argocd
 
     # work
     kubectl
@@ -66,6 +67,7 @@
     micromamba
     go-task
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    dbeaver
 
     kubernetes-helm
     helmfile
